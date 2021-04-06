@@ -32,6 +32,7 @@ fun RecyclerView.scrollHorizontalPercentage(): Float {
     return 100.toFloat() * computeOffset / (computeRange - computeExtent)
 }
 
+
 val RecyclerView.lastVisibleItem: Int
     get() {
         return when (val manager = layoutManager) {
@@ -40,6 +41,7 @@ val RecyclerView.lastVisibleItem: Int
             else -> RecyclerView.NO_POSITION
         }
     }
+
 
 val RecyclerView.firstVisibleItem: Int
     get() {
@@ -50,11 +52,13 @@ val RecyclerView.firstVisibleItem: Int
         }
     }
 
+
 fun RecyclerView.getItemHeight(): Int {
     val itemCount = adapter?.itemCount ?: return 0
     val computeRange = computeVerticalScrollRange()
     return computeRange / itemCount
 }
+
 
 fun RecyclerView.getItemWidth(): Int {
     val itemCount = adapter?.itemCount ?: return 0
