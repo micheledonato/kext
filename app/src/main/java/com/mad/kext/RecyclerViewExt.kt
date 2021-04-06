@@ -49,3 +49,15 @@ val RecyclerView.firstVisibleItem: Int
             else -> RecyclerView.NO_POSITION
         }
     }
+
+fun RecyclerView.getItemHeight(): Int {
+    val itemCount = adapter?.itemCount ?: return 0
+    val computeRange = computeVerticalScrollRange()
+    return computeRange / itemCount
+}
+
+fun RecyclerView.getItemWidth(): Int {
+    val itemCount = adapter?.itemCount ?: return 0
+    val computeRange = computeHorizontalScrollRange()
+    return computeRange / itemCount
+}

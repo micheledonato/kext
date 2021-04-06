@@ -1,6 +1,7 @@
 package com.mad.kext
 
 import android.content.Context
+import android.content.res.Configuration
 import androidx.annotation.ColorRes
 import androidx.annotation.DrawableRes
 import androidx.annotation.FontRes
@@ -16,3 +17,5 @@ fun Context.getCompatFont(@FontRes id: Int) =
 fun Context.getCompatDrawable(@DrawableRes id: Int) =
         ContextCompat.getDrawable(this, id)
 
+fun Context.isTablet(): Boolean =
+        ((resources.configuration.screenLayout and Configuration.SCREENLAYOUT_SIZE_MASK) >= Configuration.SCREENLAYOUT_SIZE_LARGE)
