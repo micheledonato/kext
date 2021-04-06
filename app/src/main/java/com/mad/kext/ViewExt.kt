@@ -14,6 +14,7 @@ fun View.hideKeyboard(): Boolean {
     return false
 }
 
+
 fun View.showKeyboard() {
     val imm = context.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
     this.requestFocus()
